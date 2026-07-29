@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+*.temp
+*.log
+
+# Node/Python (if future scripts are added)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Test outputs
+test-output/
