@@ -37,13 +37,13 @@
 1. 打开 Cursor → 侧边栏 **Customize**
 2. 进入 **Rules** → 点击 **Add Rule**
 3. 选择 **Remote Rule (GitHub)**
-4. 输入仓库地址：`https://github.com/liangyuheng/ai-pm-skills`
+4. 输入仓库地址：`https://github.com/AndyLiangliang/ai-pm-skills`
 5. 选择你想要导入的技能
 
 ### 方法 2：手动复制
 
 ```bash
-git clone https://github.com/liangyuheng/ai-pm-skills.git /tmp/ai-pm-skills
+git clone https://github.com/AndyLiangliang/ai-pm-skills.git /tmp/ai-pm-skills
 cp -r /tmp/ai-pm-skills/skills/* ~/.cursor/skills/
 ```
 
@@ -89,7 +89,7 @@ cp -r /tmp/ai-pm-skills/skills/* ~/.cursor/skills/
 ## 项目结构
 
 ```text
-liangyuheng/ai-pm-skills/
+AndyLiangliang/ai-pm-skills/
 ├── README.md
 ├── .gitignore
 └── skills/
