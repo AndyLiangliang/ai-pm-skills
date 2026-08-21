@@ -40,11 +40,6 @@ disable-model-invocation: false
 
 收集：产品名/项目名、公开信息、用户已知数据、可选的知识库笔记。信息不够就追问，不要假装 21 格都填得上。
 
-若当前工作区能读到 Obsidian vault，可按需读取（不强制）：
-
-- `炒饭会/课件/5H2HMAX/` 中对应场景笔记
-- `wiki/concepts/` 中与该产品相关的概念页
-
 ### 1. 填 21 格
 
 读取 [matrix-21.md](references/matrix-21.md)。每格标记：
