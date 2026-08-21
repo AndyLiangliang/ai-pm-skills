@@ -3,6 +3,10 @@
 ## 工作流总览
 
 ```text
+已有产品 / 值不值得做
+    ↓
+[ai-pm-teardown] 拆解（可选闸门）
+    ↓
 用户想法
     ↓
 [ai-pm-idea-clarify] 想法澄清
@@ -49,7 +53,8 @@
 
 | 场景 | 使用 |
 |---|---|
-| 已有想法，需要验证 | `/ai-pm-idea-clarify` |
+| 拆竞品 / 算值不值得做 | `/ai-pm-teardown` |
+| 已有想法，需要验证定位 | `/ai-pm-idea-clarify` |
 | 已有定位，需要技术方案 | `/ai-pm-solution-design` |
 | 已有方案，需要编码 Prompt | `/ai-pm-prompt-consultant` |
 | 已有方案，需要项目文档 | `/ai-pm-project-scaffold` |

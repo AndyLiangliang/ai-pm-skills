@@ -1,6 +1,6 @@
 ---
 name: ai-pm-project-kit
-description: 中文 AI PM 项目启动工作流：从 AI 产品想法 → 方案设计 → Vibe Coding Prompt → 项目骨架（PRD/Tech Design/AGENTS.md/评估计划）。当用户说"我要做一个 AI 产品"、"设计一个 Agent"、"启动 AI 项目"或"/ai-pm-project-kit"时触发。
+description: 中文 AI PM 项目启动工作流：从 AI 产品想法 → 方案设计 → Vibe Coding Prompt → 项目骨架。当用户说"我要做一个 AI 产品"、"设计一个 Agent"、"启动 AI 项目"或"/ai-pm-project-kit"时触发。若用户要拆竞品、算值不值得做、做商业可行性，先走 ai-pm-teardown，不要用本 skill 代替拆解。
 disable-model-invocation: false
 ---
 
@@ -23,6 +23,8 @@ disable-model-invocation: false
 - 可选：目标用户、参考产品、技术偏好、相关 wiki 页
 
 ## 标准工作流
+
+若用户要拆已有产品、做竞品分析、或先判断「值不值得做」：先调用 `/ai-pm-teardown`，等结论是「值得做 / 条件做」再进入下面 4 步。拆解不是本工作流的第 0 步强制项——用户明确说「直接开工」可以跳过。
 
 严格按顺序执行以下 4 个子 Skill，每步完成后向用户汇报关键产出，并确认是否继续：
 
@@ -65,6 +67,7 @@ disable-model-invocation: false
 - **用户已有 PRD**：跳过 `ai-pm-project-scaffold` 的 PRD 部分，只生成 Tech Design 和 AGENTS.md。
 - **用户只想要 Prompt**：只执行步骤 1–3，然后结束。
 - **用户只想要方案设计**：只执行步骤 1–2，然后结束。
+- **用户其实在问值不值得做**：改走 `ai-pm-teardown` 模式 B，不要在本工作流里编一份假账。
 
 ## 输出文件清单
 

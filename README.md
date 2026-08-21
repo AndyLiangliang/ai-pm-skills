@@ -1,6 +1,6 @@
 # AI PM Skills for Cursor
 
-一套中文 AI 产品经理专用的 Cursor Agent Skills，覆盖从 AI 产品想法到可执行方案的完整工作流。
+一套中文 AI 产品经理专用的 Cursor Agent Skills，覆盖两条链：**先拆清楚值不值得做**，再从想法做到可执行方案。
 
 > **定位**：不是通用 Vibe Coding 项目套件，而是"把领域经验封装成 AI 产品"的专用工作流。
 
@@ -17,6 +17,10 @@
 ## 工作流
 
 ```text
+已有产品 / 竞品 / 「值不值得做」
+    ↓
+[ai-pm-teardown] 5W2H Max 拆解（21 格 + UE + 竞争象限）
+    ↓ 结论是值得做
 用户想法（模糊）
     ↓
 [ai-pm-idea-clarify] 想法澄清
@@ -53,7 +57,8 @@ cp -r /tmp/ai-pm-skills/skills/* ~/.cursor/skills/
 
 | Skill | 触发方式 | 作用 |
 |---|---|---|
-| `/ai-pm-project-kit` | 主调度 | 启动完整工作流 |
+| `/ai-pm-teardown` | 单独 / 开工前闸门 | 用 5W2H Max 拆产品、拆项目、算可行性与竞争象限 |
+| `/ai-pm-project-kit` | 主调度 | 启动完整开工工作流 |
 | `/ai-pm-idea-clarify` | 子步骤 / 单独 | 用判断优先 + 五层链澄清 AI 产品想法 |
 | `/ai-pm-solution-design` | 子步骤 / 单独 | 模型选型、Agent/RAG 架构、评估指标 |
 | `/ai-pm-prompt-consultant` | 子步骤 / 单独 | 生成 AI 产品专用 Vibe Coding Prompt |
@@ -63,7 +68,16 @@ cp -r /tmp/ai-pm-skills/skills/* ~/.cursor/skills/
 
 ## 中文触发示例
 
-除了 `/` 命令，你也可以用中文自然语言触发主调度：
+除了 `/` 命令，也可以用自然语言触发。拆解走 `/ai-pm-teardown`，开工走 `/ai-pm-project-kit`。
+
+拆解链：
+
+- "拆一下这个产品"
+- "这个想法值不值得做"
+- "帮我做竞品分析"
+- "算一下商业可行性"
+
+开工链：
 
 - "我要做一个 AI 产品"
 - "设计一个 Agent"
@@ -77,6 +91,8 @@ cp -r /tmp/ai-pm-skills/skills/* ~/.cursor/skills/
 
 本套 Skill 嵌入以下 AI PM 方法论：
 
+- **5W2H Max**：企业 21 格 + 用户校验；🟢可观测 / 🟡可推断 / 🔴不可知
+- **可行性链**：首尾两端 → UE → 回本与流量匹配
 - **判断优先协议**：已知领域先让用户预判，再让 AI 补充挑战
 - **框架前置-五层分析链**：从问题验证 → 行业探索 → 公司诊断 → 产品评估 → 用户行为
 - **WVFSL Prompt 框架**：What / Vibe / Stack / Features / Limit
@@ -93,6 +109,7 @@ AndyLiangliang/ai-pm-skills/
 ├── README.md
 ├── .gitignore
 └── skills/
+    ├── ai-pm-teardown/
     ├── ai-pm-project-kit/
     ├── ai-pm-idea-clarify/
     ├── ai-pm-solution-design/
@@ -104,9 +121,10 @@ AndyLiangliang/ai-pm-skills/
 
 ## 使用建议
 
-1. 先安装 `/ai-pm-project-kit`，用完整工作流跑一个真实项目。
-2. 如果只想做某一步，可以直接调用对应子 Skill。
-3. 如果项目根目录已有 `PRD.md` 等文件，子 Skill 会提示避免覆盖。
+1. 要拆竞品或判断值不值得做：先用 `/ai-pm-teardown`，不要直接开工。
+2. 已经确认值得做：安装 `/ai-pm-project-kit`，用完整工作流跑一个真实项目。
+3. 如果只想做某一步，可以直接调用对应子 Skill。
+4. 如果项目根目录已有 `PRD.md` 等文件，子 Skill 会提示避免覆盖。
 
 ---
 

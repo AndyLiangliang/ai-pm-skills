@@ -1,12 +1,14 @@
 ---
 name: ai-pm-idea-clarify
-description: 用 AI PM 方法论澄清 AI 产品想法。当用户说"我要做一个 AI 产品"、"帮我梳理这个 AI 想法"、"这个想法可行吗"或作为主调度工作流第一步时触发。
+description: 用 AI PM 方法论澄清 AI 产品想法，收敛用户、场景、MVP 边界。当用户说"帮我梳理这个 AI 想法"、"定位一下这个产品"或作为开工工作流第一步时触发。若用户要拆竞品、算商业可行性、单位经济或值不值得做，改用 ai-pm-teardown。
 disable-model-invocation: true
 ---
 
 # AI PM 想法澄清
 
 ## 任务
+
+若用户要拆竞品、算 UE/商业可行性、或问「值不值得做」且需要数字，停止本 skill，改走 `/ai-pm-teardown`。
 
 把用户的模糊想法收敛为可执行的 AI 产品定位，重点回答三个问题：
 
